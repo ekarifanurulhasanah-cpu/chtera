@@ -1,17 +1,17 @@
+import 'package:flutter/material.dart';
 import 'package:chtera/page/pempage.dart';
 import 'package:chtera/page/propage.dart';
 import 'package:chtera/page/putri_chattpage.dart';
 import 'package:chtera/model/putri_menumodel.dart';
-import 'package:flutter/material.dart';
 
 class PutriDasboard extends StatefulWidget {
   const PutriDasboard({super.key});
 
   @override
-  State<PutriDasboard> createState() => _MenuPageState();
+  State<PutriDasboard> createState() => _PutriDasboardState();
 }
 
-class _MenuPageState extends State<PutriDasboard> {
+class _PutriDasboardState extends State<PutriDasboard> {
   int selectedIndex = 0;
   Map<int, PutriMenumodel> menu = {
     0: PutriMenumodel(

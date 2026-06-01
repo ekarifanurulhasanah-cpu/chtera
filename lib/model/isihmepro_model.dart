@@ -1,5 +1,5 @@
 class IsihmeproModel {
-  final String url;
+final String url;
 
-  IsihmeproModel({required this.url});
+IsihmeproModel({required this.url});
 }

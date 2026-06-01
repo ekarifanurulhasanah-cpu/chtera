@@ -1,6 +1,6 @@
 class Isimdel {
-  final String sub;
-  final String sab;
+  final String url;
+  final String nme;
 
-  Isimdel({required this.sub, required this.sab});
+  Isimdel({required this.url, required this.nme});
 }

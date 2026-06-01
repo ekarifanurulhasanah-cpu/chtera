@@ -1,9 +1,8 @@
 import 'package:chtera/model/eka_kommodel.dart';
-
 List<EkaKommodel> komm = [
   EkaKommodel(
-    judul: 'Stiker lucu',
-    sub: 'janlup follow ya',
+    judul: 'ngaji bareng',
+    sub: 'ismillah',
     url: 'asset/st.jpeg',
   ),
   EkaKommodel(

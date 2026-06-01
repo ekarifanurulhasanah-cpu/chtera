@@ -1,15 +1,15 @@
-import 'package:flutter/material.dart';
 import 'package:chtera/page/eka_register.dart';
 import 'package:chtera/page/putri_dasboard.dart';
+import 'package:flutter/material.dart';
 
-class EkaDaftar extends StatefulWidget {
-  const EkaDaftar({super.key});
+class EkaLogin extends StatefulWidget {
+  const EkaLogin({super.key});
 
   @override
-  State<EkaDaftar> createState() => _EkaDaftarState();
+  State<EkaLogin> createState() => _EkaLoginState();
 }
 
-class _EkaDaftarState extends State<EkaDaftar> {
+class _EkaLoginState extends State<EkaLogin> {
   late TextEditingController _username = TextEditingController();
   TextEditingController _telephone = TextEditingController();
   @override
@@ -38,8 +38,9 @@ class _EkaDaftarState extends State<EkaDaftar> {
               ),
               child: SingleChildScrollView(
                 child: Column(
-                  children: [ SizedBox(height: 10,),
-                    Image.asset('asset/apk.jpeg',height: 100,width: 100,),
+                  children: [
+                    SizedBox(height: 10),
+                    Image.asset('asset/apk.jpeg', height: 100, width: 100),
                     Text(
                       ' DAFTAR ',
                       style: TextStyle(
@@ -183,7 +184,7 @@ class _EkaDaftarState extends State<EkaDaftar> {
                             onPressed: () => Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => EkaLogin(),
+                                builder: (context) => EkaRegister(),
                               ),
                             ),
                             child: Text(

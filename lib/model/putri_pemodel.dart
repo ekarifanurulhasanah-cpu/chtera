@@ -1,4 +1,3 @@
-
 class PutriPemodel {
   final String name;
   final String imageURL;

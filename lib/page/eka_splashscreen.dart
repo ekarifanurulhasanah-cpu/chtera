@@ -1,20 +1,22 @@
 import 'dart:async';
-import 'package:chtera/eka_login.dart';
+import 'package:chtera/page/eka_register.dart';
 import 'package:flutter/material.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+import 'eka_login.dart';
+
+class EkaSplashScreen extends StatefulWidget {
+  const EkaSplashScreen({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<EkaSplashScreen> createState() => _EkaSplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _EkaSplashScreenState extends State<EkaSplashScreen> {
   late Timer r;
   @override
   void initState() {
     r = Timer.periodic(
-      const Duration(seconds: 4),
+      const Duration(seconds: 3),
           (timer) => Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => EkaLogin()),
@@ -32,6 +34,8 @@ class _SplashScreenState extends State<SplashScreen> {
         height: size.height,
         decoration: BoxDecoration(
           gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
             colors: [
               Colors.white,
               Colors.tealAccent,
@@ -41,14 +45,22 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("asset/lot.jpeg"),
-            SizedBox(height: 50),
+            Image.asset("asset/apk.jpeg"),
+            SizedBox(height: 40),
             Text(
               'Chattera',
               style: TextStyle(
                 color: Colors.green,
                 fontSize: 30,
                 fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'Aplikasi Chatting You',
+              style: TextStyle(
+                color: Colors.green,
+                fontSize: 25,
+                fontWeight: FontWeight.w200,
               ),
             ),
           ],

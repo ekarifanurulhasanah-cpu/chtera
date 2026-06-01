@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Kmntaspge extends StatefulWidget {
+class IsiKomunitas extends StatefulWidget {
   final String url;
   final String judul;
-  const Kmntaspge({super.key, required this.url, required this.judul});
+  const IsiKomunitas({super.key, required this.url, required this.judul});
 
   @override
-  State<Kmntaspge> createState() => _KmntaspgeState();
+  State<IsiKomunitas> createState() => _IsiKomunitasState();
 }
 
-class _KmntaspgeState extends State<Kmntaspge> {
+class _IsiKomunitasState extends State<IsiKomunitas> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -18,9 +18,7 @@ class _KmntaspgeState extends State<Kmntaspge> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            ClipOval(
-              child: Image.asset(widget.url, width: 45, height: 45),
-            ),
+            ClipOval(child: Image.asset(widget.url, width: 45, height: 45)),
             SizedBox(width: 5),
             Text(
               widget.judul,
@@ -48,6 +46,60 @@ class _KmntaspgeState extends State<Kmntaspge> {
             end: Alignment.bottomCenter,
             colors: [Colors.greenAccent, Colors.teal],
           ),
+        ),
+        child: Column(
+          children: [
+            Align(
+              alignment: Alignment.center,
+              child: Card(
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Column(
+                    children: [
+                      Image.asset("asset/ngajie.jpeg"),
+                      SizedBox(width: 5),
+                      Text('Ayo ikuti pengajoian hari ini'),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            Column(
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Card(
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        children: [
+                          Image.asset("asset/ngajie.jpeg"),
+                          SizedBox(width: 5),
+                          Text(
+                            'Pengajian hari ini',
+                            style: TextStyle(color: Colors.black, fontSize: 15),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Card(
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Text("janlup follow yaa"),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

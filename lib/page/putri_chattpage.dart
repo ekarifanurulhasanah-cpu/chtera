@@ -21,7 +21,7 @@ class _PutriChattpageState extends State<PutriChattpage> {
             Text(
               "Chattera",
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -33,80 +33,110 @@ class _PutriChattpageState extends State<PutriChattpage> {
           ),
         ),
       ),
-      body: SizedBox(
-        width: double.infinity,
-        height: double.infinity,
-        child: SingleChildScrollView(
-          padding: EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 10),
-              Text(
-                "Chatt",
-                style: TextStyle(
-                  color: Colors.greenAccent,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
+      body: Container(width: size.width,
+        height: size.height,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [Colors.greenAccent, Colors.teal],
+          ),
+        ),
+        child: SizedBox(
+          width: double.infinity,
+          height: double.infinity,
+          child: SingleChildScrollView(
+            padding: EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    SizedBox(height: 10),
+                    Text(
+                      "Chatt",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    ),SizedBox(width: 390,), Icon(Icons.menu)
+                  ],
                 ),
-              ),
-              SizedBox(
-                width: double.infinity,
-                height: 5,
-                child: PageView(children: []),
-              ),
-              SizedBox(
-                width: size.width - 40,
-                height: 600,
-                child: ListView.builder(
-                  itemCount: 5,
-                  scrollDirection: Axis.vertical,
-                  itemBuilder: (context, i) => Card(
-                    elevation: 5,
-                    child: Container(
-                      width: 270,
-                      height: 60,
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          ClipOval(
-                            child: Image.asset(
-                              chat[i].imge,
-                              width: 35,
-                              height: 35,
-                              fit: BoxFit.fill,
-                            ),
+                SizedBox(
+                  width: double.infinity,
+                  height: 5,
+                  child: PageView(children: []),
+                ),
+                SizedBox(
+                  width: size.width - 40,
+                  height: 600,
+                  child: ListView.builder(
+                    itemCount: 5,
+                    scrollDirection: Axis.vertical,
+                    itemBuilder: (context, i) => GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => IsiChatt(image: chat[i].imge, nme: chat[i].nme,),
                           ),
-                          SizedBox(
-                            width: 400,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  chat[i].nme,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15,
+                        );
+                      },
+                      child: Card(
+                        elevation: 5,
+                        child: Container(
+                          width: 270,
+                          height: 60,
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  ClipOval(
+                                    child: Image.asset(
+                                      chat[i].imge,
+                                      width: 35,
+                                      height: 35,
+                                      fit: BoxFit.fill,
+                                    ),
                                   ),
-                                ),SizedBox(width: 5),
-                                Text(
-                                  chat[i].subtitlel,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 10,
+                                  SizedBox(width: 5),
+                                  SizedBox(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          chat[i].nme,
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15,
+                                          ),
+                                        ),
+                                        SizedBox(width: 5),
+                                        Text(
+                                          chat[i].subtitlel,
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 10,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
+                                ],
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

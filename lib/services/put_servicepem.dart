@@ -1,5 +1,4 @@
 import 'package:chtera/model/putri_pemodel.dart';
-
 List<PutriPemodel> pem = [
   PutriPemodel(name: "Saya", imageURL: "asset/tok.webp"),
   PutriPemodel(name: "cua", imageURL: "asset/tok.webp"),

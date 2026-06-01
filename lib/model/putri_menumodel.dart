@@ -6,7 +6,10 @@ class PutriMenumodel {
   final String label;
   final Color color;
 
-  PutriMenumodel({required this.page, required this.icon, required this.label, required this.color});
-
-
+  PutriMenumodel({
+    required this.page,
+    required this.icon,
+    required this.label,
+    required this.color,
+  });
 }
